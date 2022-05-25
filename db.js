@@ -1,9 +1,9 @@
-
+require('dotenv').config();
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb+srv://utkarsh4747:47magicDB48@cluster0.o8vvq.mongodb.net/iNoteBook";
+
 const connectToMongo = () => {
-  mongoose.connect(mongoURI, () => {
+  mongoose.connect(process.env.mongoURI, () => {
     console.log("Database connected!!!");
   });
 };
