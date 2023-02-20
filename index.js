@@ -16,10 +16,16 @@ app.use(cors());
 app.use(express.json());
 
 // Available Routes
-app.use("/api/auth", require("./Routes/auth"));
-app.use("/api/notes", require("./Routes/notes"));
+app.use("/api/auth", require("./Routes/auth.js"));
+app.use("/api/notes", require("./Routes/notes.js"));
 
 // Listening
+// app.listen(process.env.PORT || 5000, () => {
+//   console.log(`Example app listening at http://localhost:${process.env.PORT}`);
+// });
+app.get('/',(req,res) =>{
+  res.status(200).send("Hello World")
+})
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`Example app listening at http://localhost:${process.env.PORT}`);
+  console.log(`Example app listening at http://localhost:${process.env.PORT || 5000}`);
 });
